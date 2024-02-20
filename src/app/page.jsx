@@ -1,3 +1,5 @@
+// ./src/app/page.jsx
+
 import { getSession } from "@auth0/nextjs-auth0";
 import { redirect } from "next/navigation";
 
@@ -8,4 +10,5 @@ export default async function Home() {
   }
 
   return (<a href="/api/auth/login">Login</a>);
+
 }
