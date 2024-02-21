@@ -10,6 +10,9 @@ export default async function DashboardPage() {
     redirect("/api/auth/login");
   }
 
+  //const auth0UserId = session.user.identities[0].user_id;
+  console.log('Auth0 User ID:', session.user.sub);
+
   // Connect to MongoDB
   const db = await getDb();
 
