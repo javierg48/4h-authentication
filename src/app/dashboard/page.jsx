@@ -16,8 +16,10 @@ export default async function DashboardPage() {
   // Connect to MongoDB
   const db = await getDb();
 
+  const userName = session.user.given_name;
+
   // Search for a user with firstName 'Javier'
-  const user = await db.collection('users').findOne({ firstName: 'Javier' });
+  const user = await db.collection('users').findOne({ firstName: userName });
 
   console.log("Connected to MongoDB!", user);
 
@@ -34,7 +36,7 @@ export default async function DashboardPage() {
       {user && (
         <div>
           <p>User found:</p>
-          <p>First Name: {user.firstName}</p>
+          <p>First Name: {user.user_metadata.given_name}</p>
           {/* Add other user details as needed */}
         </div>
       )}
