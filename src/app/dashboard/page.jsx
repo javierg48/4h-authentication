@@ -21,6 +21,20 @@ export default async function DashboardPage() {
   const user = await db.collection('users').findOne(userID);
 
 
+  // const section1Collection = db.collection('section1');
+
+  //   // Data for the new document
+  //   const newDocument = {
+  //     key1: 'value1',
+  //     key2: 'value2',
+  //     // add other fields as needed
+  //   };
+
+  //   // Insert the new document
+  //   const result = await section1Collection.insertOne(newDocument);
+  //   console.log("RESULT: ", result);
+
+
   console.log(user)
   return (
     <div>
