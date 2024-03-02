@@ -21,6 +21,7 @@ export default async function DashboardPage() {
   const user = await db.collection('users').findOne(userID);
 
 
+  console.log(user)
   return (
     <div>
       {!!session?.user && (
@@ -32,10 +33,11 @@ export default async function DashboardPage() {
       {/* Display user information */}
       {user && (
         <div>
-          <p>{user.user_metadata.given_name} {user.user_metadata.family_name}</p>
+          <p>{user.given_name} {user.family_name}</p>
           <p> {user.email}</p>
-          <p> {user.user_metadata.birthdate}</p>
+          <p> {user.birthdate}</p>
           <p> User ID: {user._id.toString()}</p>
+
           {/* Add other user details as needed */}
         </div>
       )}
