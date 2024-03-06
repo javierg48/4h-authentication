@@ -91,7 +91,7 @@ export default function Section1Form() {
             value={nameOfClub}
             type="text"
             id="nameOfClub"
-            placeholder="John Doe"
+            placeholder="Club name"
           />
         </div>
 
@@ -114,7 +114,7 @@ export default function Section1Form() {
             value={clubLeader}
             type="text"
             id="clubLeader"
-            placeholder="John Doe"
+            placeholder="Leader fullname"
           />
         </div>
 
@@ -152,12 +152,12 @@ export default function Section1Form() {
       <div className="bg-slate-100 flex flex-col">
         {error &&
           error.map((e) => (
-            <div
+            <div key={success ? "success-key" : "failure-key"}
               className={`${
                 success ? "text-green-800" : "text-red-600"
               } px-5 py-2`}
             >
-              {e}
+            {e}
             </div>
           ))}
       </div>

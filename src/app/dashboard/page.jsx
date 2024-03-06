@@ -48,6 +48,7 @@ export default async function DashboardPage() {
           <p> {user.email}</p>
           <p> {user.birthdate}</p>
           <p> User ID: {user._id.toString()}</p>
+          <a href="/input">Section 1 Form</a> 
 
           {/* Add other user details as needed */}
         </div>
