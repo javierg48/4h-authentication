@@ -1,4 +1,5 @@
 // ./src/app/api/auth/[auth]/.route.js
+
 import { handleAuth } from '@auth0/nextjs-auth0';
 import { connectToDatabase } from '../../../lib/mongodb.js';
 

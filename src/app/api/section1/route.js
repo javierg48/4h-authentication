@@ -1,16 +1,19 @@
-// ./src/app/api/contact/route.js
+// ./src/app/api/section1/route.js
 
 import connectDB from "@/app/lib/mongodb.js";
-import Contact from "@/app/models/contact";
+import Section1 from "@/app/models/section1";
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 
 export async function POST(req) {
-  const { fullname, email, message } = await req.json();
+  const { year, grade, nameOfClub, numInClub, clubLeader, meetingsHeld, meetingsAttended } = await req.json();
+  
+
+
 
   try {
     await connectDB();
-    await Contact.create({ fullname, email, message });
+    await Section1.create({ year, grade, nameOfClub, numInClub, clubLeader, meetingsHeld, meetingsAttended });
 
     return NextResponse.json({
       msg: ["Message sent successfully"],
