@@ -1,7 +1,7 @@
 // ./src/app/dashboard/page.jsx
 import { getSession } from "@auth0/nextjs-auth0";
 import { redirect } from "next/navigation";
-import { getDb } from "../../lib/db";
+import connectDB from "../lib/mongodb.js";
 import { ObjectId } from "mongodb";
 
 export default async function DashboardPage() {
@@ -13,13 +13,11 @@ export default async function DashboardPage() {
 
   //const auth0UserId = session.user.identities[0].user_id;
   const userID = ObjectId.createFromHexString(session.user.sub.substring(6));
-
   // Connect to MongoDB
-  const db = await getDb();
-
+  const db = await connectDB();
   // Search for a user with current session user's ID
   const user = await db.collection('users').findOne(userID);
-
+  console.log("user:", user)
 
   // const section1Collection = db.collection('section1');
 
@@ -35,7 +33,6 @@ export default async function DashboardPage() {
   //   console.log("RESULT: ", result);
 
 
-  console.log(user)
   return (
     <div>
       {!!session?.user && (
