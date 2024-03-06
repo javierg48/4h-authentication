@@ -1,3 +1,4 @@
+// ./src/app/models/contact.js
 import mongoose, { Schema } from "mongoose";
 
 const contactSchema = new Schema({
@@ -27,6 +28,6 @@ const contactSchema = new Schema({
 });
 
 const Contact =
-  mongoose.models.Contact || mongoose.model("Contact", contactSchema);
+  mongoose.models.Contact || mongoose.model("Contact", contactSchema, "test");
 
 export default Contact;

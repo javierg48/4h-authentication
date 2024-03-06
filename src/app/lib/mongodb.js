@@ -1,4 +1,4 @@
-// src/lib/mongodb.js
+// ./src/lib/mongodb.js
 import mongoose from "mongoose";
 
 const connectDB = async () => {
